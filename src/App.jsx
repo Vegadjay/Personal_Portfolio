@@ -19,7 +19,7 @@ function App() {
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    const loadingTimeout = setTimeout(() => setLoading(false), 1000);
+    const loadingTimeout = setTimeout(() => setLoading(false), 2000);
 
     return () => {
       window.removeEventListener('mousemove', handleMouseMove);
