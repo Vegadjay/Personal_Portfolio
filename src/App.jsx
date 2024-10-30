@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import LodingGif from '/Loding/Loding.gif'
+import { Loading } from './pages/components/Loading';
 import { Page1 } from './pages/Page1/Page1';
 import { Page2 } from './pages/Page2/Page2';
 import { Page3 } from './pages/Page3/Page3';
@@ -17,7 +19,6 @@ function App() {
     };
     window.addEventListener('mousemove', handleMouseMove);
 
-    // Simulate a delay for loading content
     const loadingTimeout = setTimeout(() => setLoading(false), 1000);
 
     return () => {
@@ -29,7 +30,7 @@ function App() {
   if (loading) {
     return (
       <div className="flex items-center justify-center min-h-screen bg-black text-white text-2xl">
-        Loading...
+        <Loading />
       </div>
     );
   }
