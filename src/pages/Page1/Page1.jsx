@@ -59,7 +59,6 @@ export const Page1 = () => {
                         className="h-[28rem] w-[28rem] drop-shadow-2xl object-contain"
                     />
                 </div>
-                <h1 className='text-white text-3xl'>Welcome to my world</h1>
             </motion.div>
 
             <div className="mt-8 transform-gpu">
