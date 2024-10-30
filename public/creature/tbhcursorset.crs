@@ -1,0 +1,45 @@
+﻿[Arrow]
+Path=TBH Normal Select.cur
+
+[Hand]
+Path=TBH Link Select.cur
+
+[IBeam]
+Path=TBH Text Select.cur
+
+[Help]
+Path=TBH Help Select.cur
+
+[AppStarting]
+Path=TBH Working in Background.ani
+
+[Wait]
+Path=TBH Busy.ani
+
+[Crosshair]
+Path=TBH Precision Select.cur
+
+[NWPen]
+Path=TBH Handwriting.cur
+
+[No]
+Path=TBH Unavailable.ani
+
+[SizeNS]
+Path=TBH Vertical Resize.cur
+
+[SizeWE]
+Path=TBH Horizontal Resize.cur
+
+[SizeNWSE]
+Path=TBH Diagonal Resize 1.cur
+
+[SizeNESW]
+Path=TBH Diagonal Resize 2.cur
+
+[SizeAll]
+Path=TBH Move.cur
+
+[UpArrow]
+Path=TBH Alternate Select.cur
+
