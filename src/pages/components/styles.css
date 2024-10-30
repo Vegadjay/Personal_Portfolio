@@ -1,35 +1,34 @@
 .dash {
-  width: 35px; /* Width of the dash element */
-  height: 15px; /* Height of the dash element */
-  border-radius: 8px; /* Rounded corners */
-  background: #FF2CBD; /* Background color */
-  box-shadow: 0 0 10px 0 #FECDFF; /* Box shadow */
+  height: 15px;
+  width: 35px;
+  border-radius: 8px; 
+  background: #FF2CBD; 
+  box-shadow: 0 0 10px 0 #FECDFF; 
 }
 
 .uno {
-  transform-origin: center left; /* Origin for rotation */
-  animation: spin 3s linear infinite; /* Animation for spinning */
+  transform-origin: center left;
+  animation: spin 3s linear infinite; 
 }
 
 .dos {
-  transform-origin: center right; /* Origin for rotation */
-  animation: spin2 3s linear infinite; /* Animation for spinning */
-  animation-delay: 0.2s; /* Delay for animation */
+  transform-origin: center right; 
+  animation: spin2 3s linear infinite; 
+  animation-delay: 0.2s; 
 }
 
 .tres {
-  transform-origin: center right; /* Origin for rotation */
-  animation: spin3 3s linear infinite; /* Animation for spinning */
-  animation-delay: 0.3s; /* Delay for animation */
+  transform-origin: center right; 
+  animation: spin3 3s linear infinite; 
+  animation-delay: 0.3s; 
 }
 
 .cuatro {
-  transform-origin: center right; /* Origin for rotation */
-  animation: spin4 3s linear infinite; /* Animation for spinning */
-  animation-delay: 0.4s; /* Delay for animation */
+  transform-origin: center right; 
+  animation: spin4 3s linear infinite; 
+  animation-delay: 0.4s; 
 }
 
-/* Keyframes for animations */
 @keyframes spin {
   0% { transform: rotate(0deg); }
   25% { transform: rotate(360deg); }

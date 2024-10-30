@@ -31,8 +31,8 @@ export const Page1 = () => {
     const centerX = innerWidth / 2;
     const centerY = innerHeight / 2;
 
-    const adjustedRotateX = useTransform(y, [0, innerHeight], [25, -25]);
-    const adjustedRotateY = useTransform(x, [0, innerWidth], [-25, 25]);
+    const adjustedRotateX = useTransform(y, [0, innerHeight], [20, -20]);
+    const adjustedRotateY = useTransform(x, [0, innerWidth], [-20, 20]);
 
     return (
         <div
