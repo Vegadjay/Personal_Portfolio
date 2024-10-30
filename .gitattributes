@@ -1,2 +1,3 @@
-*.html linguist-language=HTML linguist-detectable=true linguist-documentation=25%
+*.html linguist-language=HTML linguist-detectable=true linguist-documentation=10%
+*.css linguist-language=CSS linguist-detectable=true linguist-documentation=7-9%
 *.js linguist-language=JavaScript
