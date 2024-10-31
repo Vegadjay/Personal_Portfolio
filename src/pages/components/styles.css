@@ -6,18 +6,17 @@
   box-shadow: 0 0 10px 0 #FECDFF; 
 }
 .loading-text {
-  font-size: 1.5rem; /* Adjust the font size as needed */
-  color: #FF2CBD;    /* Match the color with your dash elements */
-  font-weight: bold;  /* Make the text bold */
+  font-size: 1.5rem; 
+  color: #FF2CBD; 
+  font-weight: bold; 
 }
 
-/* Bounce animation */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-10px); /* Adjust the bounce height */
+    transform: translateY(-10px); 
   }
 }
 

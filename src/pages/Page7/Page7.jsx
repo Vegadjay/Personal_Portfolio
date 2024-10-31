@@ -23,7 +23,7 @@ export const Page7 = () => {
 
             const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
-                body: formData
+                body: formData,
             });
 
             const data = await response.json();
@@ -58,6 +58,7 @@ export const Page7 = () => {
                     <Heading Heading={"Let's Talk:- "} />
                 </div>
 
+                {/* Form Section */}
                 <div className="w-full flex flex-col lg:flex-row gap-8">
                     <div className="w-full lg:w-1/3 flex justify-center items-start">
                         <img
@@ -67,18 +68,9 @@ export const Page7 = () => {
                         />
                     </div>
                     <div className="w-full lg:w-2/3">
-                        <form
-                            onSubmit={onSubmit}
-                            className="w-full"
-                            action="https://api.web3forms.com/submit"
-                            method="POST"
-                        >
+                        <form onSubmit={onSubmit} className="w-full">
                             <div className="bg-white/5 rounded-xl p-6 md:p-8">
-                                <input
-                                    type="hidden"
-                                    name="access_key"
-                                    value={accessKey}
-                                />
+                                <input type="hidden" name="access_key" value={accessKey} />
 
                                 <div className="flex flex-col md:flex-row gap-4">
                                     <input
@@ -117,10 +109,10 @@ export const Page7 = () => {
                                 </div>
 
                                 {result && (
-                                    <div className={`mt-4 text-center p-3 rounded-lg ${result.includes("thank you")
-                                        ? "bg-green-500/10 text-green-300"
-                                        : "bg-red-500/10 text-red-300"
-                                        }`}>
+                                    <div
+                                        className={`mt-4 text-center p-3 rounded-lg ${result.includes("thank you") ? "bg-green-500/10 text-green-300" : "bg-red-500/10 text-red-300"
+                                            }`}
+                                    >
                                         {result}
                                     </div>
                                 )}
@@ -129,9 +121,9 @@ export const Page7 = () => {
                                     <button
                                         type="submit"
                                         disabled={isSubmitting}
-                                        className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 w-40 disabled:opacity-50"
+                                        className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-gradient-to-br from-slate-950 to-slate-800 px-4 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-110 focus:outline-none disabled:opacity-70"
                                     >
-                                        {isSubmitting ? "Sending..." : "Send"}
+                                        {isSubmitting ? "Sending..." : "Send Message"}
                                     </button>
                                 </div>
                             </div>
@@ -140,7 +132,7 @@ export const Page7 = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default Page7;
