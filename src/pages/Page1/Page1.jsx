@@ -9,6 +9,7 @@ import BoyImage from './Boy.png';
 export const Page1 = () => {
     const [windowOffset, setWindowOffset] = useState({ innerWidth: window.innerWidth, innerHeight: window.innerHeight });
     const [mouseMove, setMouseMove] = useState(false);
+    const [visitorCount, setVisitorCount] = useState(0);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
@@ -27,6 +28,17 @@ export const Page1 = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    useEffect(() => {
+        const storedCount = localStorage.getItem('visitorCount');
+        if (storedCount) {
+            setVisitorCount(parseInt(storedCount, 10));
+        }
+
+        const newCount = (storedCount ? parseInt(storedCount, 10) : 0) + 1;
+        setVisitorCount(newCount);
+        localStorage.setItem('visitorCount', newCount);
+    }, []);
+
     const { innerWidth, innerHeight } = windowOffset;
     const adjustedRotateX = useTransform(y, [0, innerHeight], [20, -20]);
     const adjustedRotateY = useTransform(x, [0, innerWidth], [-20, 20]);
@@ -38,6 +50,10 @@ export const Page1 = () => {
             onMouseEnter={() => setMouseMove(true)}
             onMouseLeave={() => setMouseMove(false)}
         >
+            <div className="absolute top-4 right-4 text-gray-600 text-lg font-semibold">
+                Visitor Count: {visitorCount}
+            </div>
+
             <motion.div
                 className="flex items-center justify-center relative w-[800px] h-[800px]"
                 style={{
@@ -69,7 +85,7 @@ export const Page1 = () => {
                     href="https://github.com/vegadjay"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-purple-500" // Unique color for GitHub
+                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-purple-500"
                 >
                     <img
                         src={GithubSvg}
@@ -77,7 +93,6 @@ export const Page1 = () => {
                         className="w-10 h-10 filter text-black transition-colors duration-300"
                     />
                 </a>
-
                 <a
                     href="https://www.linkedin.com/in/vegadjay/"
                     target="_blank"
@@ -90,7 +105,6 @@ export const Page1 = () => {
                         className="w-10 h-10 filter text-black transition-colors duration-300"
                     />
                 </a>
-
                 <a
                     href="https://www.youtube.com/@JAY_VEGAD"
                     target="_blank"
@@ -103,12 +117,11 @@ export const Page1 = () => {
                         className="w-10 h-10 filter text-black transition-colors duration-300"
                     />
                 </a>
-
                 <a
                     href="https://www.instagram.com/jay_vegad_/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500" // Gradient for Instagram
+                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500"
                 >
                     <img
                         src={InstagramSvg}
