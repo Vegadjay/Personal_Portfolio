@@ -50,7 +50,8 @@ export const Page1 = () => {
             onMouseEnter={() => setMouseMove(true)}
             onMouseLeave={() => setMouseMove(false)}
         >
-            <div className="absolute top-4 right-4 text-gray-600 text-lg font-semibold">
+            {/* Responsive Visitor Count */}
+            <div className="absolute top-4 right-4 text-gray-600 font-semibold text-sm sm:text-base md:text-lg lg:text-xl">
                 Visitor Count: {visitorCount}
             </div>
 
@@ -75,7 +76,7 @@ export const Page1 = () => {
                     <img
                         src={BoyImage}
                         alt="boy model"
-                        className="h-[28rem] w-[28rem] drop-shadow-2xl object-contain"
+                        className="h-[20rem] w-[20rem] sm:h-[24rem] sm:w-[24rem] lg:h-[28rem] lg:w-[28rem] drop-shadow-2xl object-contain"
                     />
                 </motion.div>
             </motion.div>
@@ -85,48 +86,48 @@ export const Page1 = () => {
                     href="https://github.com/vegadjay"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-purple-500"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-purple-500"
                 >
                     <img
                         src={GithubSvg}
                         alt="GitHub"
-                        className="w-10 h-10 filter text-black transition-colors duration-300"
+                        className="w-8 h-8 sm:w-10 sm:h-10 filter text-black transition-colors duration-300"
                     />
                 </a>
                 <a
                     href="https://www.linkedin.com/in/vegadjay/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-blue-600"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-blue-600"
                 >
                     <img
                         src={LinkdinSvg}
                         alt="LinkedIn"
-                        className="w-10 h-10 filter text-black transition-colors duration-300"
+                        className="w-8 h-8 sm:w-10 sm:h-10 filter text-black transition-colors duration-300"
                     />
                 </a>
                 <a
                     href="https://www.youtube.com/@JAY_VEGAD"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-red-600"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-red-600"
                 >
                     <img
                         src={YoutubeSvg}
                         alt="YouTube"
-                        className="w-10 h-10 filter text-black transition-colors duration-300"
+                        className="w-8 h-8 sm:w-10 sm:h-10 filter text-black transition-colors duration-300"
                     />
                 </a>
                 <a
                     href="https://www.instagram.com/jay_vegad_/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-16 h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500"
+                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500"
                 >
                     <img
                         src={InstagramSvg}
                         alt="Instagram"
-                        className="w-10 h-10 filter text-black transition-colors duration-300"
+                        className="w-8 h-8 sm:w-10 sm:h-10 filter text-black transition-colors duration-300"
                     />
                 </a>
             </div>
