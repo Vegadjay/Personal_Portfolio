@@ -9,7 +9,6 @@ import BoyImage from './Boy.png';
 export const Page1 = () => {
     const [windowOffset, setWindowOffset] = useState({ innerWidth: window.innerWidth, innerHeight: window.innerHeight });
     const [mouseMove, setMouseMove] = useState(false);
-    const [visitorCount, setVisitorCount] = useState(0);
     const x = useMotionValue(0);
     const y = useMotionValue(0);
 
@@ -28,17 +27,6 @@ export const Page1 = () => {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    useEffect(() => {
-        const storedCount = localStorage.getItem('visitorCount');
-        if (storedCount) {
-            setVisitorCount(parseInt(storedCount, 10));
-        }
-
-        const newCount = (storedCount ? parseInt(storedCount, 10) : 0) + 1;
-        setVisitorCount(newCount);
-        localStorage.setItem('visitorCount', newCount);
-    }, []);
-
     const { innerWidth, innerHeight } = windowOffset;
     const adjustedRotateX = useTransform(y, [0, innerHeight], [20, -20]);
     const adjustedRotateY = useTransform(x, [0, innerWidth], [-20, 20]);
@@ -50,10 +38,7 @@ export const Page1 = () => {
             onMouseEnter={() => setMouseMove(true)}
             onMouseLeave={() => setMouseMove(false)}
         >
-            {/* Responsive Visitor Count */}
-            <div className="absolute top-4 right-4 text-gray-600 font-semibold text-sm sm:text-base md:text-lg lg:text-xl">
-                Visitor Count: {visitorCount}
-            </div>
+
 
             <motion.div
                 className="flex items-center justify-center relative w-[800px] h-[800px]"
