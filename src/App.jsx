@@ -8,12 +8,11 @@ import { Page4 } from './pages/Page4/Page4';
 import { Page5 } from './pages/Page5/Page5';
 import { Page6 } from './pages/Page6/Page6';
 import { Page7 } from './pages/Page7/Page7';
+import { TextAnimation } from './components/TextFolder/TextAnimation';
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [loading, setLoading] = useState(true);
-
-  
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -27,6 +26,8 @@ function App() {
       window.removeEventListener('mousemove', handleMouseMove);
       clearTimeout(loadingTimeout);
     };
+
+
   }, []);
 
   if (loading) {
@@ -78,7 +79,8 @@ function App() {
         <div className="flex justify-center items-center hidden lg:block h-screen min-h-[900px] p-4 sm:p-6 lg:p-8 border border-gray-700 rounded-lg shadow-lg bg-opacity-20 backdrop-blur-lg bg-black/30">
           <Page5 />
         </div>
-        <div className='hidden lg:block md:block'>
+
+        <div className='hidden lg:block md:hidden'>
           <String />
         </div>
 
@@ -86,7 +88,7 @@ function App() {
           <Page6 />
         </div>
 
-        <String />
+        <TextAnimation />
 
         <div className="flex justify-center items-center h-screen min-h-[1300px] lg:min-h-[1000px] sm:min-h-[1200px] md:min-h-[1500px] p-4 sm:p-6 lg:p-8 border border-gray-700 rounded-lg shadow-lg bg-opacity-20 backdrop-blur-lg bg-black/30">
           <Page7 />

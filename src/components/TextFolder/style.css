@@ -1,0 +1,154 @@
+body {
+    overflow-x: hidden;
+    margin: 0; 
+    padding: 0;
+}
+
+.marquee-container {
+    overflow: hidden;
+    width: 100vw;
+}
+
+#move {
+    height: 300px;
+    width: 100vw;
+    background-color: yellow;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 15rem;
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0 20px;
+}
+
+.marquee { 
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    will-change: transform;
+    position: relative;
+}
+
+#arrowImg {
+    height: 80px;
+    width: 80px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 1199.98px) {
+    #move {
+        height: 250px;
+    }
+    
+    h1 {
+        font-size: 12rem;
+    }
+    
+    #arrowImg {
+        height: 70px;
+        width: 70px;
+    }
+    
+    .marquee {
+        gap: 25px;
+    }
+}
+
+@media (max-width: 991.98px) {
+    #move {
+        height: 220px;
+    }
+    
+    h1 {
+        font-size: 10rem;
+    }
+    
+    #arrowImg {
+        height: 60px;
+        width: 60px;
+    }
+    
+    .marquee {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #move {
+        height: 180px;
+    }
+    
+    h1 {
+        font-size: 8rem;
+    }
+    
+    #arrowImg {
+        height: 50px;
+        width: 50px;
+    }
+    
+    .marquee {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    #move {
+        height: 150px;
+    }
+    
+    h1 {
+        font-size: 6rem;
+    }
+    
+    #arrowImg {
+        height: 40px;
+        width: 40px;
+    }
+    
+    .marquee {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    #move {
+        height: 120px;
+    }
+    
+    h1 {
+        font-size: 4rem;
+    }
+    
+    #arrowImg {
+        height: 30px;
+        width: 30px;
+    }
+    
+    .marquee {
+        gap: 8px;
+    }
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee {
+    display: flex;
+    white-space: nowrap;
+    will-change: transform;
+}
+
+.marquee > * {
+    flex-shrink: 0;
+}
