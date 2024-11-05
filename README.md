@@ -36,10 +36,12 @@ Here are a few projects that I have worked on:
 
 ## 🏅 Certifications
 
-- **React** - [View Certificate](https://www.hackerrank.com/certificates/42de5453bb6d)
+- **React** - [View Certificate](https://www.hackerrank.com/certificates/d8d1db6f6890)
 - **Java** - [View Certificate](https://www.hackerrank.com/certificates/92d6ece8f147)
 - **JavaScript** - [View Certificate](https://www.hackerrank.com/certificates/42de5453bb6d)
 - **CSS** - [View Certificate](https://www.hackerrank.com/certificates/2e505ed6836d)
+- **SQL INTERMEDIATE** - [View Certificate](https://www.hackerrank.com/certificates/db1b5918cb19)
+- **SQL** - [View Certificate](https://www.hackerrank.com/certificates/0af44fd9c8a7)
 
 ## 🌐 Connect with Me
 
