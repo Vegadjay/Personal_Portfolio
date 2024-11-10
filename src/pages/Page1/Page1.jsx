@@ -104,7 +104,7 @@ export const Page1 = () => {
                     />
                 </a>
                 <a
-                    href="https://www.instagram.com/jay_vegad_/"
+                    href="https://www.instagram.com/jay_vegad_1/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-colors duration-300 hover:bg-gradient-to-r hover:from-pink-500 hover:to-orange-500"
