@@ -13,14 +13,14 @@ export const Page6 = () => {
             btnText: "Click Here"
         },
         {
-            title: "Rock, Paper, Scissor",
+            title: "Rock, Paper, Scissor Game Using Html",
             discription: "This is my first game using Html, Css, and Javascript",
             path: "/Project_Pics/Rock_paper.jpeg",
             link: "https://vegadjay.github.io/Rock-Paper-And-Scissor-Game-/",
             btnText: "Click Here"
         },
         {
-            title: "Tic Tac Toi",
+            title: "Tic Tac Toi Game Using Html",
             discription: "This game was made in my first semester of college. It uses Html, Css, and Js",
             path: "/Project_Pics/Tic_Tac.png",
             link: "https://vegadjay.github.io/Tic-Tac-Toi-Game/",
@@ -34,15 +34,15 @@ export const Page6 = () => {
             btnText: "Click Here"
         },
         {
-            title: "News App",
+            title: "News App Usinag React And Bootstrap",
             discription: "This is a news app made using an API",
             path: "/Project_Pics/NMews.jpeg",
             link: "https://github.com/Vegadjay/News-App",
             btnText: "Click Here"
         },
         {
-            title: "MERN Todo",
-            discription: "A Todo app built with the MERN stack",
+            title: "Todo App Using Mern Stack",
+            discription: "This is Todo App. This App is made using Mern stack and this is my latest project (Withou Ai)",
             path: "/Project_Pics/Todo.png",
             link: "https://github.com/Vegadjay/Mern_Todo",
             btnText: "Click Here"

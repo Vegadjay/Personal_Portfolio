@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 body {
   margin: 0;
@@ -11,7 +15,7 @@ body {
 
 html,
 body:root {
-  cursor: url('/creature/Normal.cur'), auto;
+  cursor: url('/macos-1/Normal.cur'), auto;
 }
 
 a {
@@ -20,34 +24,30 @@ a {
 }
 
 a:hover {
-  cursor: url('/creature/Pointer.cur'), pointer;
+  cursor: url('/macos-1/Pointer12.cur'), pointer;
 }
 
 
 button:hover {
-  cursor: url('/creature/Pointer.cur'), pointer;
+  cursor: url('/macos-1/Pointer12.cur'), pointer;
 }
 
 .cursor-pointer-c {
-  cursor: url('/creature/Pointer.cur'), pointer;
+  cursor: url('/macos-1/Pointer12.cur'), pointer;
 }
 
 
 input[type="text"],
 input[type="email"],
 textarea {
-  cursor: url('/creature/Text.cur'), text;
+  cursor: url('/macos-1/Textse.cur'), text;
 }
 
 span:hover {
-  cursor: url('/creature/Text.cur'), text;
+  cursor: url('/macos-1/Textse.cur'), text;
 }
 
 
 button {
-  cursor: url('/creature/Pointer.cur'), pointer;
-}
-
-.some-element {
-  cursor: url('/creature/Move.cur'), move;
+  cursor: url('/macos-1/Pointer12.cur'), pointer;
 }

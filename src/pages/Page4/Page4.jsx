@@ -85,23 +85,44 @@ export const Page4 = () => {
 export const Skilldiv = ({ logoName, logo }) => {
     return (
         <motion.div
-            className="group flex flex-col items-center justify-center bg-transperent border border-white 
-            rounded-lg sm:rounded-xl shadow-md hover:shadow-xl transition-all duration-100 p-2 sm:p-3 h-full w-full"
-            whileHover={{ scale: 1.05 }}
-            transition={{ type: "spring", stiffness: 300 }}
+            className="group relative flex flex-col items-center justify-center bg-transparent border border-white/30 
+      rounded-lg sm:rounded-xl shadow-md transition-all duration-300 p-2 sm:p-3 h-full w-full
+      hover:border-white hover:bg-white/5 hover:shadow-xl hover:shadow-white/10"
+            whileHover={{
+                scale: 1.05,
+                transition: { type: "spring", stiffness: 300 }
+            }}
         >
-            <div className="flex items-center justify-center bg-gray-50 rounded-full p-2 sm:p-3 mb-1 sm:mb-2 group-hover:bg-gray-100 transition-colors duration-300">
+            {/* Glow effect container */}
+            <div className="absolute inset-0 rounded-lg sm:rounded-xl bg-gradient-to-r from-blue-500/0 via-blue-500/0 to-purple-500/0 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+
+            {/* Icon container */}
+            <div className="relative flex items-center justify-center bg-gray-50 rounded-full p-2 sm:p-3 mb-1 sm:mb-2 
+        group-hover:bg-white transition-colors duration-300
+        group-hover:ring-2 group-hover:ring-white/20 group-hover:ring-offset-2 group-hover:ring-offset-transparent">
                 <motion.img
                     src={logo}
                     alt={logoName}
                     className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 object-contain"
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ type: "spring", stiffness: 300 }}
+                    whileHover={{
+                        scale: 1.2,
+                        rotate: [0, -10, 10, -10, 0],
+                    }}
+                    transition={{
+                        scale: { type: "spring", stiffness: 300 },
+                        rotate: { duration: 0.5, ease: "easeInOut" }
+                    }}
                 />
             </div>
-            <span className="text-xs sm:text-sm md:text-base font-semibold text-center line-clamp-1 sm:line-clamp-2 text-slate-200">
+
+            {/* Text container */}
+            <motion.span
+                className="text-xs sm:text-sm md:text-base font-semibold text-center line-clamp-1 sm:line-clamp-2 
+        text-slate-200 group-hover:text-white transition-colors duration-300"
+                whileHover={{ scale: 1.05 }}
+            >
                 {logoName}
-            </span>
+            </motion.span>
         </motion.div>
     );
 };

@@ -2,22 +2,32 @@ body {
     overflow-x: hidden;
     margin: 0; 
     padding: 0;
+    background: #0f0f0f;
 }
 
 .marquee-container {
     overflow: hidden;
     width: 100vw;
+    position: relative;
 }
 
 #move {
     height: 300px;
     width: 100vw;
-    background-color: yellow;
-    color: black;
+    background: rgba(15, 15, 15, 0.95);
+    color: #f8f8f8;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    position: relative;
+    /* Modern text shadow for depth */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        -2px -2px 4px rgba(255, 255, 255, 0.1);
+    /* Glass effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 h1 {
@@ -26,6 +36,13 @@ h1 {
     white-space: nowrap;
     margin: 0;
     padding: 0 20px;
+    letter-spacing: -2px;
+    font-weight: 700;
+    /* Subtle gradient text */
+    background: linear-gradient(45deg, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    transition: all 0.3s ease;
 }
 
 .marquee { 
@@ -40,6 +57,13 @@ h1 {
     height: 80px;
     width: 80px;
     flex-shrink: 0;
+    filter: brightness(1.5) drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+#arrowImg:hover {
+    filter: brightness(1.8) drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+    transform: scale(1.1);
 }
 
 @media (max-width: 1199.98px) {
@@ -141,6 +165,7 @@ h1 {
     width: 100%;
     overflow: hidden;
     position: relative;
+    background: linear-gradient(to bottom, rgba(15, 15, 15, 0.95), rgba(20, 20, 20, 0.98));
 }
 
 .marquee {
@@ -151,4 +176,37 @@ h1 {
 
 .marquee > * {
     flex-shrink: 0;
+}
+
+/* Enhanced hover effects */
+#move:hover {
+    color: #00ffff;
+    text-shadow: 
+        0 0 10px rgba(0, 255, 255, 0.5),
+        0 0 20px rgba(0, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+#move:hover h1 {
+    background: linear-gradient(45deg, #00ffff, #0099ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    letter-spacing: -1px;
+}
+
+/* Optional: Add this for a subtle animation on load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#move {
+    animation: fadeIn 0.8s ease-out;
 }
