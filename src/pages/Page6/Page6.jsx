@@ -42,7 +42,7 @@ export const Page6 = () => {
         },
         {
             title: "Todo App Using Mern Stack",
-            discription: "This is Todo App. This App is made using Mern stack and this is my latest project (Withou Ai)",
+            discription: "This is Todo App. This App is made using Mern stack and this is my latest project",
             path: "/Project_Pics/Todo.png",
             link: "https://github.com/Vegadjay/Mern_Todo",
             btnText: "Click Here"
