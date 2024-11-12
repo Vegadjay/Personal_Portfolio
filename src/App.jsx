@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Loading } from './pages/components/Loading';
 import String from '../src/components/String/String';
 import { Page1 } from './pages/Page1/Page1';
 import { Page2 } from './pages/Page2/Page2';
@@ -100,7 +99,14 @@ function App() {
           <Page6 />
         </div>
 
-        <TextAnimation />
+        <div>
+          <div className='block sm:block md:hidden lg:hidden'>
+            <String />
+          </div>
+          <div className='hidden md:block lg:block'>
+            <TextAnimation />
+          </div>
+        </div>
 
         <div className="flex justify-center items-center h-screen min-h-[1300px] lg:min-h-[1000px] sm:min-h-[1200px] md:min-h-[1500px] p-4 sm:p-6 lg:p-8 ">
           <Page7 />

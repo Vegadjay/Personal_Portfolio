@@ -8,26 +8,20 @@ export const arrowMarquee = () => {
     
     const baseDuration = (contentWidth / viewportWidth) * 10;
     
-    // Initial state
     gsap.set('.marquee', {
         xPercent: 0
     });
 
-    // Default color
-    const defaultColor = '#ffffff';  // White
-    // Color for reverse scroll
-    const reverseColor = '#00ffff';  // Cyan
+    const defaultColor = '#ffffff';
+    const reverseColor = '#00ffff';
 
     let isScrolling;
     let lastScrollDirection = null;
 
     window.addEventListener("wheel", (e) => {
-        // Clear the previous timeout
         window.clearTimeout(isScrolling);
 
-        // Set a timeout to run after scrolling ends
         isScrolling = setTimeout(() => {
-            // Reset color when scrolling stops
             gsap.to(moveSection, {
                 color: defaultColor,
                 duration: 0.5,
@@ -36,7 +30,6 @@ export const arrowMarquee = () => {
         }, 150);
 
         if(e.deltaY > 0) {
-            // Forward scroll
             if(lastScrollDirection !== 'forward') {
                 gsap.to(moveSection, {
                     color: defaultColor,
@@ -47,7 +40,6 @@ export const arrowMarquee = () => {
             }
             rightScroll(baseDuration);
         } else {
-            // Reverse scroll
             if(lastScrollDirection !== 'reverse') {
                 gsap.to(moveSection, {
                     color: reverseColor,
@@ -66,7 +58,7 @@ const rightScroll = (baseDuration) => {
 
     const tl = gsap.timeline({
         repeat: -1,
-        defaults: { ease: 'none' }  // Changed to 'none' for smoother scrolling
+        defaults: { ease: 'none' } 
     });
 
     tl.to('.marquee', {
@@ -77,7 +69,6 @@ const rightScroll = (baseDuration) => {
         }
     });
 
-    // Smooth arrow rotation
     gsap.to('.marquee img', {
         rotation: 180,
         duration: 0.6,
@@ -90,7 +81,7 @@ const leftScroll = (baseDuration) => {
 
     const tl = gsap.timeline({
         repeat: -1,
-        defaults: { ease: 'none' }  // Changed to 'none' for smoother scrolling
+        defaults: { ease: 'none' } 
     });
 
     tl.to('.marquee', {
@@ -101,7 +92,6 @@ const leftScroll = (baseDuration) => {
         }
     });
 
-    // Smooth arrow rotation
     gsap.to('.marquee img', {
         rotation: 0,
         duration: 0.6,
@@ -109,7 +99,6 @@ const leftScroll = (baseDuration) => {
     });
 }
 
-// Optional: Add this function if you want a smooth color transition when scrolling starts
 const initializeColorTransition = () => {
     gsap.set('#move', {
         color: '#ffffff'  // Set initial color
