@@ -15,7 +15,7 @@ body {
 
 html,
 body:root {
-  cursor: url('/macos-1/Normal.cur'), auto;
+  cursor: url('/Black/Normal.cur'), auto;
 }
 
 a {
@@ -24,30 +24,30 @@ a {
 }
 
 a:hover {
-  cursor: url('/macos-1/Pointer12.cur'), pointer;
+  cursor: url('/Black/Pointer.cur'), pointer;
 }
 
 
 button:hover {
-  cursor: url('/macos-1/Pointer12.cur'), pointer;
+  cursor: url('/Black/Pointer.cur'), pointer;
 }
 
 .cursor-pointer-c {
-  cursor: url('/macos-1/Pointer12.cur'), pointer;
+  cursor: url('/Black/Pointer.cur'), pointer;
 }
 
 
 input[type="text"],
 input[type="email"],
 textarea {
-  cursor: url('/macos-1/Textse.cur'), text;
+  cursor: url('/Black/Text.cur'), text;
 }
 
 span:hover {
-  cursor: url('/macos-1/Textse.cur'), text;
+  cursor: url('/Black/Text.cur'), text;
 }
 
 
 button {
-  cursor: url('/macos-1/Pointer12.cur'), pointer;
+  cursor: url('/Black/Pointer.cur'), pointer;
 }
