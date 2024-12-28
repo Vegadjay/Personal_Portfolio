@@ -53,7 +53,6 @@ const MobileNav = ({ isMobileExpanded, setIsMobileExpanded }) => (
     </div>
 );
 
-// todo: Remove that name from the icon while in mobile and add that only icons and also make that more design able ... 
 
 const MobileNavItem = ({ icon, text, href, setIsMobileExpanded }) => {
     const [isClicked, setIsClicked] = useState(false);
@@ -131,12 +130,14 @@ function IconContainer({ mouseX, text, icon, href }) {
                 style={{ width, height }}
                 className="aspect-square rounded-full bg-transparent flex items-center justify-center relative"
             >
-                <motion.img
-                    src={icon}
-                    alt={text}
-                    style={{ width: widthIconSpring, height: heightIconSpring }}
-                    className="filter invert"
-                />
+                <div className='h-12 w-12 bg-slate-900 flex justify-center items-center rounded-full'>
+                    <motion.img
+                        src={icon}
+                        alt={text}
+                        style={{ width: widthIconSpring, height: heightIconSpring }}
+                        className="filter invert"
+                    />
+                </div>
 
                 <AnimatePresence>
                     {isHovered && (
