@@ -130,14 +130,12 @@ function IconContainer({ mouseX, text, icon, href }) {
                 style={{ width, height }}
                 className="aspect-square rounded-full bg-transparent flex items-center justify-center relative"
             >
-                <div className='h-12 w-12 bg-slate-900 flex justify-center items-center rounded-full'>
-                    <motion.img
-                        src={icon}
-                        alt={text}
-                        style={{ width: widthIconSpring, height: heightIconSpring }}
-                        className="filter invert"
-                    />
-                </div>
+                <motion.img
+                    src={icon}
+                    alt={text}
+                    style={{ width: widthIconSpring, height: heightIconSpring }}
+                    className="filter invert"
+                />
 
                 <AnimatePresence>
                     {isHovered && (

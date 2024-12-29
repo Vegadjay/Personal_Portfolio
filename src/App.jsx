@@ -100,7 +100,7 @@ function App() {
           <String />
         </div>
 
-        <div id='projects' className="flex justify-center items-center h-screen min-h-[2760px] md:min-h-[1800px] lg:min-h-[1390px] p-4 sm:p-6 lg:p-8 ">
+        <div id='projects' className="flex justify-center items-center h-screen min-h-[3360px] md:min-h-[1800px] lg:min-h-[1390px] p-4 sm:p-6 lg:p-8 ">
           <Page6 />
         </div>
 
