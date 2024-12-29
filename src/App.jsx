@@ -74,19 +74,19 @@ function App() {
 
         <String />
 
-        <div id='aboutme' className="flex justify-center items-center h-screen min-h-[1000px] p-4 sm:p-6 lg:p-8 ">
+        <div id='aboutme' className="flex justify-center items-center h-screen min-h-[1000px] md:min-h-[400px] p-4 sm:p-6 lg:p-8 ">
           <Page2 />
         </div>
 
         <String />
 
-        <div id='edu' className="flex justify-center items-center h-screen sm:min-h-[1400px] md:min-h-[1900px] lg:min-h-[1300px] min-h-[1800px] p-4 sm:p-6 lg:p-8 ">
+        <div id='edu' className="flex justify-center items-center h-screen sm:min-h-[1400px] md:min-h-[1600px] lg:min-h-[1100px] min-h-[1800px] p-4 sm:p-6 lg:p-8 ">
           <Page3 />
         </div>
 
         <String />
 
-        <div id='skills' className="flex justify-center items-center h-screen sm:min-h-[1400px] min-h-[1200px] md:min-h-[1100px] p-4 sm:p-6 lg:p-2 lg:min-h-[1000px]">
+        <div id='skills' className="flex justify-center items-center h-screen sm:min-h-[1400px] min-h-[1200px] md:min-h-[700px] p-4 sm:p-6 lg:p-2 lg:min-h-[600px]">
           <Page4 />
         </div>
 
@@ -100,13 +100,13 @@ function App() {
           <String />
         </div>
 
-        <div id='projects' className="flex justify-center items-center h-screen min-h-[3360px] md:min-h-[1800px] lg:min-h-[1390px] p-4 sm:p-6 lg:p-8 ">
+        <div id='projects' className="flex justify-center items-center h-screen min-h-[3360px] md:min-h-[2100px] lg:min-h-[1390px] p-4 sm:p-6 lg:p-8 ">
           <Page6 />
         </div>
 
         <TextAnimation />
 
-        <div id='contact' className="flex justify-center items-center h-screen min-h-[1300px] lg:min-h-[1000px] sm:min-h-[1200px] md:min-h-[1500px] p-4 sm:p-6 lg:p-8 ">
+        <div id='contact' className="flex justify-center items-center h-screen min-h-[1300px] lg:min-h-[1000px] sm:min-h-[1200px] md:min-h-[1200px] p-4 sm:p-6 lg:p-8 ">
           <Page7 />
         </div>
       </div>
