@@ -1,94 +1,130 @@
 import React from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
 import Heading from '../components/Heading';
+
 export const Page4 = () => {
-    const skills = [
-        { logoName: "HTML", logo: "/icons/HTML.svg" },
-        { logoName: "CSS", logo: "/icons/CSS.svg" },
-        { logoName: "JAVASCRIPT", logo: "/icons/JavaScript.svg" },
-        { logoName: "FIREBASE", logo: "/icons/Firebase.svg" },
-        { logoName: "DOCKER", logo: "/icons/Docker.svg" },
-        { logoName: "FIGMA", logo: "/icons/Figma.svg" },
-        { logoName: "GIT", logo: "/icons/Git.svg" },
-        { logoName: "GITHUB", logo: "/icons/Github.svg" },
-        { logoName: "JAVA", logo: "/icons/Java.svg" },
-        { logoName: "LINUX", logo: "/icons/Linux.svg" },
-        { logoName: "MONGODB", logo: "/icons/MongoDB.svg" },
-        { logoName: "MYSQL", logo: "/icons/MySQL.svg" },
-        { logoName: "NEXTJS", logo: "/icons/NextJS.svg" },
-        { logoName: "NODE JS", logo: "/icons/NodeJS.svg" },
-        { logoName: "POSTMAN", logo: "/icons/Postman.svg" },
-        { logoName: "POWERSHELL", logo: "/icons/Powershell-Dark.svg" },
-        { logoName: "REACT", logo: "/icons/React-Dark.svg" },
-        { logoName: "REDUX", logo: "/icons/Redux.svg" },
-        { logoName: "STACKOVERFLOW", logo: "/icons/StackOverflow-Dark.svg" },
-        { logoName: "SVG", logo: "/icons/SVG-Dark.svg" },
-        { logoName: "TAILWIND", logo: "/icons/TailwindCSS-Dark.svg" },
-        { logoName: "TYPESCRIPT", logo: "/icons/TypeScript.svg" },
-        { logoName: "VS CODE", logo: "/icons/VSCode-Dark.svg" },
-    ];
+    const skillCategories = {
+        frontend: {
+            title: "Frontend Technologies",
+            skills: [
+                { logoName: "REACT", logo: "/icons/React-Dark.svg" },
+                { logoName: "NEXTJS", logo: "/icons/NextJS.svg" },
+                { logoName: "JAVASCRIPT", logo: "/icons/JavaScript.svg" },
+                { logoName: "TYPESCRIPT", logo: "/icons/TypeScript.svg" },
+                { logoName: "TAILWIND", logo: "/icons/TailwindCSS-Dark.svg" },
+                { logoName: "SVG", logo: "/icons/SVG-Dark.svg" },
+            ]
+        },
+        backend: {
+            title: "Backend & Database",
+            skills: [
+                { logoName: "NODE JS", logo: "/icons/NodeJS.svg" },
+                { logoName: "JAVA", logo: "/icons/Java.svg" },
+                { logoName: "MONGODB", logo: "/icons/MongoDB.svg" },
+                { logoName: "MYSQL", logo: "/icons/MySQL.svg" },
+                { logoName: "FIREBASE", logo: "/icons/Firebase.svg" },
+            ]
+        },
+        devOps: {
+            title: "DevOps & Tools",
+            skills: [
+                { logoName: "DOCKER", logo: "/icons/Docker.svg" },
+                { logoName: "GIT", logo: "/icons/Git.svg" },
+                { logoName: "GITHUB", logo: "/icons/Github.svg" },
+                { logoName: "LINUX", logo: "/icons/Linux.svg" },
+                { logoName: "POWERSHELL", logo: "/icons/Powershell-Dark.svg" },
+            ]
+        },
+        tools: {
+            title: "Development Tools",
+            skills: [
+                { logoName: "FIGMA", logo: "/icons/Figma.svg" },
+                { logoName: "POSTMAN", logo: "/icons/Postman.svg" },
+                { logoName: "STACKOVERFLOW", logo: "/icons/StackOverflow-Dark.svg" },
+            ]
+        }
+    };
 
     const container = {
         hidden: { opacity: 0 },
         show: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.08,
-                delayChildren: 0.2
+                staggerChildren: 0.1,
+                delayChildren: 0.3
             }
         }
     };
 
     return (
-        <div className="container mx-auto px-4 py-8 lg:-mt-12">
+        <div className="container mx-auto px-4 py-12 lg:-mt-12">
             <motion.div
-                className="mb-12 text-center"
-                initial={{ opacity: 0, y: -20 }}
+                className="mb-16 text-center"
+                initial={{ opacity: 0, y: -30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
             >
-                <Heading Heading="Skills:- " />
-                <motion.div
-                    className="h-1 w-24 mx-auto mt-4 rounded-full bg-gradient-to-r from-blue-400 to-purple-600"
-                    initial={{ width: 0 }}
-                    animate={{ width: 96 }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                />
+                <Heading Heading="Skills" />
             </motion.div>
 
-            <motion.div
-                className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 justify-items-center"
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-            >
-                {skills.map((skill, index) => (
-                    <motion.div
-                        key={skill.logoName}
-                        className="w-full max-w-[140px]"
-                        variants={{
-                            hidden: {
-                                opacity: 0,
-                                scale: 0.8,
-                                y: 20
-                            },
-                            show: {
-                                opacity: 1,
-                                scale: 1,
-                                y: 0,
-                                transition: {
-                                    type: "spring",
-                                    stiffness: 100,
-                                    damping: 12
-                                }
-                            }
-                        }}
-                    >
-                        <Skilldiv logoName={skill.logoName} logo={skill.logo} index={index} />
-                    </motion.div>
+            <div className="space-y-16">
+                {Object.entries(skillCategories).map(([key, category], categoryIndex) => (
+                    <div key={key} className="mb-8">
+                        <motion.h3
+                            className="text-2xl font-bold mb-8 text-white/90 pl-6 border-l-4 border-blue-500
+                                     relative overflow-hidden"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
+                        >
+                            <motion.span
+                                className="absolute bottom-0 left-0 h-0.5 bg-blue-500"
+                                initial={{ width: 0 }}
+                                whileInView={{ width: "100%" }}
+                                transition={{ duration: 0.8, delay: 0.2 }}
+                                viewport={{ once: true }}
+                            />
+                            {category.title}
+                        </motion.h3>
+
+                        <motion.div
+                            className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6"
+                            variants={container}
+                            initial="hidden"
+                            whileInView="show"
+                            viewport={{ once: true }}
+                        >
+                            {category.skills.map((skill, index) => (
+                                <motion.div
+                                    key={skill.logoName}
+                                    className="w-full max-w-[160px]"
+                                    variants={{
+                                        hidden: {
+                                            opacity: 0,
+                                            scale: 0.5,
+                                            y: 30
+                                        },
+                                        show: {
+                                            opacity: 1,
+                                            scale: 1,
+                                            y: 0,
+                                            transition: {
+                                                type: "spring",
+                                                stiffness: 120,
+                                                damping: 10,
+                                                mass: 0.8
+                                            }
+                                        }
+                                    }}
+                                >
+                                    <Skilldiv logoName={skill.logoName} logo={skill.logo} index={index} />
+                                </motion.div>
+                            ))}
+                        </motion.div>
+                    </div>
                 ))}
-            </motion.div>
+            </div>
         </div>
     );
 };
@@ -98,64 +134,75 @@ const Skilldiv = ({ logoName, logo, index }) => {
 
     return (
         <motion.div
-            className="group relative bg-white/5 backdrop-blur-sm rounded-xl p-4 
-                       border border-white/10 hover:border-white/30
-                       transition-all duration-300 h-full w-full"
+            className="group relative bg-white/[0.03] backdrop-blur-lg rounded-xl p-5 
+                       border border-white/10 hover:border-blue-500/50
+                       transition-all duration-500 h-full w-full
+                       hover:bg-white/[0.06] hover:shadow-lg hover:shadow-blue-500/20"
             whileHover={{
-                y: -5,
+                y: -8,
                 transition: {
                     type: "spring",
-                    stiffness: 100,
-                    damping: 15
+                    stiffness: 150,
+                    damping: 12
                 }
             }}
         >
             <motion.div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                 style={{
-                    background: "radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%)",
+                    background: "radial-gradient(circle at center, rgba(59, 130, 246, 0.15) 0%, transparent 70%)",
                 }}
             />
 
             <motion.div
-                className="relative flex items-center justify-center mb-3"
+                className="relative flex items-center justify-center mb-4"
                 animate={{
-                    y: [0, -6, 0],
+                    y: [0, -8, 0],
                 }}
                 transition={{
-                    duration: 2.5,
+                    duration: 3,
                     repeat: Infinity,
                     ease: "easeInOut",
-                    delay: index * 0.1
+                    delay: index * 0.15
                 }}
             >
-                <div className="relative p-3 rounded-full bg-white/10 group-hover:bg-white/20 transition-colors duration-300">
+                <div className="relative p-4 rounded-full bg-white/[0.07] group-hover:bg-white/[0.12] 
+                              transition-colors duration-500 overflow-hidden">
+                    <motion.div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100"
+                        animate={{
+                            background: [
+                                "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.2) 0%, transparent 50%)",
+                                "radial-gradient(circle at 100% 100%, rgba(59, 130, 246, 0.2) 0%, transparent 50%)",
+                                "radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.2) 0%, transparent 50%)",
+                            ],
+                        }}
+                        transition={{
+                            duration: 4,
+                            repeat: Infinity,
+                            ease: "linear"
+                        }}
+                    />
                     <motion.img
                         src={logo}
                         alt={logoName}
-                        className="w-8 h-8 md:w-10 md:h-10 object-contain relative z-10"
+                        className="w-10 h-10 md:w-12 md:h-12 object-contain relative z-10"
                         whileHover={{
-                            rotate: [0, -90, 90, 0],
+                            scale: 1.2,
+                            rotate: [0, -10, 10, 0],
                             transition: {
-                                duration: 0.4,
+                                duration: 0.6,
                                 ease: "easeInOut"
                             }
-                        }}
-                    />
-                    <motion.div
-                        className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                        style={{
-                            background: "radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.2), transparent 70%)",
-                            filter: "blur(4px)",
                         }}
                     />
                 </div>
             </motion.div>
 
             <motion.p
-                className="text-sm font-medium text-center text-white/70 group-hover:text-white
-                          transition-colors duration-300"
-                initial={{ opacity: 0.7 }}
+                className="text-sm font-medium text-center text-white/60 group-hover:text-white
+                          transition-colors duration-500"
+                initial={{ opacity: 0.6 }}
                 whileHover={{ opacity: 1 }}
             >
                 {logoName}
@@ -164,3 +211,4 @@ const Skilldiv = ({ logoName, logo, index }) => {
     );
 };
 
+export default Page4;

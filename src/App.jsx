@@ -9,16 +9,32 @@ import { Page5 } from './pages/Page5/Page5';
 import { Page6 } from './pages/Page6/Page6';
 import { Page7 } from './pages/Page7/Page7';
 import Loader from './components/Loader/Loader';
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar';
 import { TextAnimation } from './components/TextFolder/TextAnimation';
+import { useMediaQuery } from 'react';
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [loading, setLoading] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Handle responsive breakpoints
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
+      // Only update cursor on non-touch devices
+      if (window.matchMedia('(pointer: fine)').matches) {
+        setCursorPosition({ x: e.clientX, y: e.clientY });
+      }
     };
     window.addEventListener('mousemove', handleMouseMove);
 
@@ -44,71 +60,83 @@ function App() {
 
   return (
     <div
-      className="min-h-screen relative overflow-hidden"
+      className="min-h-screen relative overflow-x-hidden"
       style={{
         background: `
-            repeating-linear-gradient(0deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px),
-            repeating-linear-gradient(90deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px),
-            linear-gradient(90deg, hsl(87,0%,9%), hsl(87,0%,9%))
-          `,
+          repeating-linear-gradient(0deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px),
+          repeating-linear-gradient(90deg, rgb(41, 41, 41) 0px, rgb(41, 41, 41) 1px, transparent 1px, transparent 21px),
+          linear-gradient(90deg, hsl(87,0%,9%), hsl(87,0%,9%))
+        `,
         backgroundAttachment: 'fixed',
         backgroundSize: '21px 21px, 21px 21px, 100% 100%',
       }}
     >
-      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 z-50 w-full flex justify-center pb-4">
+      {/* Responsive Navbar */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 w-full flex justify-center pb-4 px-4">
         <Navbar />
       </div>
-      <div
-        style={{
-          top: cursorPosition.y,
-          left: cursorPosition.x,
-          transform: 'translate(-50%, -50%)',
-        }}
-        className="pointer-events-none fixed w-10 h-10 bg-gradient-to-r from-blue-500 to-green-500 rounded-full opacity-80 transition-transform duration-150 ease-out"
-      ></div>
 
-      <div className="flex flex-col space-y-8 relative z-10">
-        <div id='homepage' className="flex justify-center items-center h-screen min-h-[900px] p-4 sm:p-6 lg:p-8 ">
+      {/* Custom cursor - only show on non-touch devices */}
+      {!isMobile && (
+        <div
+          style={{
+            top: cursorPosition.y,
+            left: cursorPosition.x,
+            transform: 'translate(-50%, -50%)',
+          }}
+          className="pointer-events-none fixed w-6 h-6 md:w-10 md:h-10 bg-gradient-to-r from-blue-500 to-green-500 rounded-full opacity-80 transition-transform duration-150 ease-out"
+        />
+      )}
+
+      <div className="flex flex-col space-y-4 md:space-y-8 relative z-10">
+        {/* Homepage */}
+        <section id="homepage" className="flex justify-center items-center min-h-screen p-4">
           <Page1 />
-        </div>
+        </section>
 
         <String />
 
-        <div id='aboutme' className="flex justify-center items-center h-screen min-h-[1000px] md:min-h-[400px] p-4 sm:p-6 lg:p-8 ">
+        {/* About Me */}
+        <section id="aboutme" className="flex justify-center items-center min-h-[400px] md:min-h-screen p-4">
           <Page2 />
-        </div>
+        </section>
 
         <String />
 
-        <div id='edu' className="flex justify-center items-center h-screen sm:min-h-[1400px] md:min-h-[1600px] lg:min-h-[1100px] min-h-[1800px] p-4 sm:p-6 lg:p-8 ">
+        {/* Education */}
+        <section id="edu" className="flex justify-center items-center min-h-[1200px] sm:min-h-[1400px] md:min-h-[1600px] lg:min-h-[1100px] p-4">
           <Page3 />
-        </div>
+        </section>
 
         <String />
 
-        <div id='skills' className="flex justify-center items-center h-screen sm:min-h-[1400px] min-h-[1200px] md:min-h-[700px] p-4 sm:p-6 lg:p-2 lg:min-h-[600px]">
+        {/* Skills */}
+        <section id="skills" className="flex justify-center items-center min-h-[800px] sm:min-h-[1000px] md:min-h-[700px] lg:min-h-[600px] p-4">
           <Page4 />
-        </div>
+        </section>
 
         <String />
 
-        <div className="flex justify-center items-center hidden lg:block h-screen min-h-[900px] p-4 sm:p-6 lg:p-8 ">
+        {/* Page5 - Only visible on larger screens */}
+        <section className="hidden lg:flex justify-center items-center min-h-screen p-4">
           <Page5 />
-        </div>
+        </section>
 
-        <div className='hidden lg:block md:hidden'>
+        <div className="hidden lg:block">
           <String />
         </div>
 
-        <div id='projects' className="flex justify-center items-center h-screen min-h-[3360px] md:min-h-[2100px] lg:min-h-[1390px] p-4 sm:p-6 lg:p-8 ">
+        {/* Projects */}
+        <section id="projects" className="flex justify-center items-center min-h-[2000px] md:min-h-[1800px] lg:min-h-[1390px] p-4">
           <Page6 />
-        </div>
+        </section>
 
         <TextAnimation />
 
-        <div id='contact' className="flex justify-center items-center h-screen min-h-[1300px] lg:min-h-[1000px] sm:min-h-[1200px] md:min-h-[1200px] p-4 sm:p-6 lg:p-8 ">
+        {/* Contact */}
+        <section id="contact" className="flex justify-center items-center min-h-[1000px] md:min-h-[1200px] lg:min-h-[1000px] p-4">
           <Page7 />
-        </div>
+        </section>
       </div>
     </div>
   );

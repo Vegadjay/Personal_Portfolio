@@ -15,7 +15,7 @@ body {
 
 html,
 body:root {
-  cursor: url('/Black/Normal.cur'), auto;
+  cursor: url('/colorful/Normal.cur'), auto;
 }
 
 a {
@@ -24,30 +24,30 @@ a {
 }
 
 a:hover {
-  cursor: url('/Black/Pointer.cur'), pointer;
+  cursor: url('/colorful/Pointer.cur'), pointer;
 }
 
 
 button:hover {
-  cursor: url('/Black/Pointer.cur'), pointer;
+  cursor: url('/colorful/Pointer.cur'), pointer;
 }
 
 .cursor-pointer-c {
-  cursor: url('/Black/Pointer.cur'), pointer;
+  cursor: url('/colorful/Pointer.cur'), pointer;
 }
 
 
 input[type="text"],
 input[type="email"],
 textarea {
-  cursor: url('/Black/Text.cur'), text;
+  cursor: url('/colorful/Text.cur'), text;
 }
 
 span:hover {
-  cursor: url('/Black/Text.cur'), text;
+  cursor: url('/colorful/Text.cur'), text;
 }
 
 
 button {
-  cursor: url('/Black/Pointer.cur'), pointer;
+  cursor: url('/colorful/Pointer.cur'), pointer;
 }
