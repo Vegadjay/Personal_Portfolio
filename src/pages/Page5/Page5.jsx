@@ -112,7 +112,6 @@ export function Page5() {
                 transition={{ duration: 0.5 }}
                 className="w-full bg-[#282c34] rounded-lg shadow-2xl overflow-hidden border border-[#3e4451]"
             >
-                {/* Title Bar */}
                 <motion.div
                     className="flex items-center justify-between p-2 bg-[#21252b] border-b border-[#3e4451]"
                     initial={{ opacity: 0 }}
@@ -148,7 +147,6 @@ export function Page5() {
                 </motion.div>
 
                 <div className="flex h-[800px] font-mono">
-                    {/* Sidebar Icons */}
                     <motion.div
                         className="w-12 bg-[#21252b] flex flex-col items-center py-2 border-r border-[#3e4451]"
                         initial={{ x: -50 }}
@@ -170,7 +168,6 @@ export function Page5() {
                         </motion.div>
                     </motion.div>
 
-                    {/* Explorer Panel */}
                     <AnimatePresence>
                         {isExplorerOpen && (
                             <motion.div
@@ -218,7 +215,6 @@ export function Page5() {
                         )}
                     </AnimatePresence>
 
-                    {/* Editor Area */}
                     <motion.div
                         className="flex-1 flex flex-col"
                         initial={{ opacity: 0 }}
@@ -270,7 +266,6 @@ export function Page5() {
                     </motion.div>
                 </div>
 
-                {/* Status Bar */}
                 <motion.div
                     className="flex items-center justify-between px-2 py-1 bg-[#21252b] text-[#abb2bf] text-sm font-mono"
                     initial={{ opacity: 0 }}
