@@ -117,15 +117,6 @@ export const Page1 = () => {
                 </a>
             </div>
 
-            <div className="mt-8 transform-gpu text-center">
-                <span className="text-sm sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold leading-relaxed block bg-gradient-to-r from-teal-400 via-cyan-500 to-blue-600 text-transparent bg-clip-text drop-shadow-lg">
-                    Building immersive digital experiences with{' '}
-                    <span className="text-indigo-600 font-dynapuff italic underline decoration-teal-400">innovative code</span>,
-                    <span className="text-indigo-600 font-dynapuff italic underline decoration-teal-400"> creative design</span>,
-                    and a{' '}
-                    <span className="text-indigo-600 font-dynapuff italic underline decoration-teal-400">passion for users</span>.
-                </span>
-            </div>
         </div>
     );
 };

@@ -90,10 +90,12 @@ const FloatingDockDesktop = ({ items, className }) => {
         <motion.div
             onMouseMove={(e) => mouseX.set(e.pageX)}
             onMouseLeave={() => mouseX.set(Infinity)}
-            className={`hidden md:flex h-20 gap-6 items-end rounded-3xl bg-black/90 backdrop-blur-xl px-6 pb-4 border border-white/10 shadow-3xl ${className}`}
+            className={`hidden md:flex h-20 gap-6 items-end rounded-3xl bg-transparent backdrop-blur-xl px-6 pb-4 border border-white/40 shadow-3xl ${className}`}
         >
             {items.map((item, index) => (
-                <IconContainer key={index} mouseX={mouseX} {...item} />
+                <div className='border border-white/10 rounded-xl shadow-2xl'>
+                    <IconContainer key={index} mouseX={mouseX} {...item} />
+                </div>
             ))}
         </motion.div>
     );
@@ -144,7 +146,7 @@ function IconContainer({ mouseX, text, icon, href }) {
                             animate={{ opacity: 1, y: -10 }}
                             exit={{ opacity: 0, y: 0 }}
                             transition={{ duration: 0.2 }}
-                            className="absolute whitespace-nowrap bottom-full mb-2 bg-black/90 text-white text-sm px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-xl border border-white/10"
+                            className="absolute whitespace-nowrap bottom-full mb-2 bg-black/90 text-white text-sm px-3 py-1.5 rounded-lg shadow-lg backdrop-blur-2xl border border-white/10"
                         >
                             {text}
                         </motion.div>

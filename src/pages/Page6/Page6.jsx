@@ -1,12 +1,19 @@
 import React from 'react'
-import { Card } from '../components/Card'
+import Card from '../components/Card'
 import Heading from '../components/Heading'
 import { motion } from 'framer-motion'
 
 export const Page6 = () => {
-
     const buttonText = ["Click Here", "Checkout  Here"]
     const projectList = [
+        {
+            title: "Rajwadi Poshak",
+            description: "A premier e-commerce platform for elegant ethnic & traditional Indian wear, built with Next.js 13.5.1, React 18.2.0, TypeScript, and MongoDB. Features include AI-powered recommendations, virtual try-on capabilities, advanced search filters, and a comprehensive admin dashboard for inventory and order management.",
+            path: "/Project_Pics/Rajwadi.jpeg",
+            link: "https://rajwadiposhak.vercel.app",
+            tech_stack: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Framer Motion"],
+            btnText: buttonText[1]
+        },
         {
             title: "E-commerce Website (Full Backend)",
             discription: "This is multi-vendor e-commerce website using (Nodejs, Experssjs, MongoDb).",
@@ -50,7 +57,7 @@ export const Page6 = () => {
             btnText: buttonText[1]
         },
         {
-            title: "News App Usinag React And Bootstrap",
+            title: "News App Using React And Bootstrap",
             discription: "This is simple news app. This app use rest api. (currently Not live because api is paid).",
             path: "/Project_Pics/NMews.jpeg",
             link: "https://github.com/Vegadjay/News-App",
@@ -61,9 +68,9 @@ export const Page6 = () => {
     return (
         <div className="container mx-auto -mt-[10rem] sm:-mt-[32rem] md:-mt-[10rem] lg:-mt-[15rem] px-4 flex flex-col items-center">
             <div className="mb-8">
-                <Heading Heading="Projects:- " />
+                <Heading Heading="Projects " />
             </div>
-            <div className="w-full">
+            <div className="w-full max-w-7xl">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {projectList.map((project, index) => (
                         <motion.div
@@ -72,7 +79,7 @@ export const Page6 = () => {
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="flex justify-center"
+                            className="flex justify-center w-full"
                         >
                             <Card
                                 title={project.title}
@@ -80,7 +87,7 @@ export const Page6 = () => {
                                 link={project.link}
                                 btnText={project.btnText}
                                 path={project.path}
-                                className="w-full max-w-xs"
+                                className="w-full aspect-[3/4] min-h-[400px] max-w-[320px]"
                             />
                         </motion.div>
                     ))}
@@ -89,3 +96,5 @@ export const Page6 = () => {
         </div>
     )
 }
+
+export default Page6;

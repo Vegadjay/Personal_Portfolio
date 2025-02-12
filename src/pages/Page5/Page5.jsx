@@ -105,12 +105,12 @@ export function Page5() {
 
     return (
         <div className="container mx-auto px-4 py-6 md:hidden flex flex-col min-h-screen mt-40 md:mt-30 lg:mt-0 hidden lg:block md:block">
-            <Heading Heading="Just For Fun:- " />
+            <Heading Heading="Just For Fun" />
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
-                className="w-full bg-[#282c34] rounded-lg shadow-2xl overflow-hidden border border-[#3e4451]"
+                className="w-full bg-[#282c34] mt-12 rounded-lg shadow-2xl overflow-hidden border border-[#3e4451]"
             >
                 <motion.div
                     className="flex items-center justify-between p-2 bg-[#21252b] border-b border-[#3e4451]"
