@@ -2,30 +2,28 @@ body {
     overflow-x: hidden;
     margin: 0; 
     padding: 0;
-    background: #0f0f0f;
 }
 
 .marquee-container {
     overflow: hidden;
     width: 100vw;
     position: relative;
+    background-color: transparent !important;
 }
 
 #move {
     height: 300px;
     width: 100vw;
-    background: rgba(15, 15, 15, 0.95);
+    background: transparent;
     color: #f8f8f8;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
     position: relative;
-    /* Modern text shadow for depth */
     text-shadow: 
         2px 2px 4px rgba(0, 0, 0, 0.3),
         -2px -2px 4px rgba(255, 255, 255, 0.1);
-    /* Glass effect */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
@@ -38,7 +36,6 @@ h1 {
     padding: 0 20px;
     letter-spacing: -2px;
     font-weight: 700;
-    /* Subtle gradient text */
     background: linear-gradient(45deg, #ffffff, #e0e0e0);
     -webkit-background-clip: text;
     background-clip: text;

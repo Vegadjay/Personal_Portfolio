@@ -41,14 +41,6 @@ export const Page7 = () => {
                 </div>
 
                 <div className="flex flex-col lg:flex-row gap-10 w-full">
-                    {/* Left Section: Image */}
-                    <div className="flex justify-center items-start w-full lg:w-1/3">
-                        <img
-                            src="/gif/Mypic.png"
-                            alt="Contact Gif"
-                            className="w-64 h-64 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-lg object-cover shadow-lg"
-                        />
-                    </div>
 
                     {/* Right Section: Form */}
                     <div className="w-full lg:w-2/3">

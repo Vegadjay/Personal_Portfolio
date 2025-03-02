@@ -1,0 +1,24 @@
+.spoiler {
+  color: transparent;
+  background-position: right;
+  background-size: 100% 100%;
+  background-image: linear-gradient(#a0aec0, #a0aec0);
+  display: inline;
+  background-repeat: no-repeat;
+  transition: all 500ms ease-in-out;
+}
+
+.spoiler:hover {
+  color: #000;
+  background-size: 0% 100%;
+}
+
+.r {
+  border-radius: 36% 64% 70% 30% / 68% 57% 43% 32%;
+}
+
+.r:hover {
+  border-radius: 50px;
+  transition: ease-out;
+  transition-duration: 1s;
+}

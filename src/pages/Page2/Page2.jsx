@@ -23,7 +23,6 @@ export const Page2 = () => {
 
     window.addEventListener('resize', checkMobile);
 
-    // Cleanup
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
