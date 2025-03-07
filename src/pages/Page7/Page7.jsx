@@ -13,12 +13,10 @@ export const Page7 = () => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Load environment variables
         const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
         const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const publicKey = import.meta.env.VITE_EMAILJS_USER_ID;
 
-        // Debug: Log environment variables
         console.log("Service ID:", serviceId);
         console.log("Template ID:", templateId);
         console.log("Public Key:", publicKey);
