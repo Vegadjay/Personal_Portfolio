@@ -9,7 +9,6 @@ const MusicPlayer = () => {
   useEffect(() => {
     setIsPlaying(true);
     audioRef.current.play().catch(error => {
-      // Handle autoplay restrictions
       console.log("Autoplay prevented:", error);
       setIsPlaying(false);
     });
@@ -44,7 +43,6 @@ const MusicPlayer = () => {
         onPause={() => setIsPlaying(false)}
       />
 
-      {/* Album art and track info - only visible on desktop */}
       <div className="hidden lg:flex items-center justify-between w-full">
         <img
           src="/Song/song-cd.svg"
@@ -65,7 +63,6 @@ const MusicPlayer = () => {
         </div>
       </div>
 
-      {/* Play/Pause button - visible on all screen sizes */}
       <button
         onClick={togglePlay}
         className="p-2 flex items-center justify-center rounded-full 
