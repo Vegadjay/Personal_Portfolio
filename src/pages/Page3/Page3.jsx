@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
+// eslint-disable-next-line no-unused-vars
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { BookOpen, Briefcase, GraduationCap } from 'lucide-react';
+import Heading from '../components/Heading';
 
 const TimelineCard = ({ data, index }) => {
     const cardRef = useRef(null);
@@ -102,13 +105,7 @@ const Timeline = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-3xl font-bold text-white mb-4">Qualification</h2>
-                    <motion.div
-                        className="h-1 w-24 mx-auto bg-gradient-to-r from-blue-500 to-blue-600 rounded-full"
-                        initial={{ width: 0 }}
-                        animate={{ width: 96 }}
-                        transition={{ duration: 0.8 }}
-                    />
+                     <Heading Heading="About Me" />
                 </motion.div>
 
                 <div ref={containerRef} className="relative">

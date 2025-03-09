@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useState, useEffect } from 'react';
 import { Page1 } from './pages/Page1/Page1';
 import { Page2 } from './pages/Page2/Page2';
@@ -9,6 +10,7 @@ import { Page7 } from './pages/Page7/Page7';
 import Loader from './components/Loader/Loader';
 import Navbar from './components/Navbar/Navbar';
 import { TextAnimation } from './components/TextFolder/TextAnimation';
+import MusicPlayer from './components/Music-Player/Music';
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -86,7 +88,9 @@ function App() {
         backgroundSize: '21px 21px, 21px 21px, 100% 100%',
       }}
     >
+      
       <div className="fixed bottom-0 left-0 right-0 z-50 w-full flex justify-center pb-4 px-4">
+        <MusicPlayer />
         <Navbar />
       </div>
 
@@ -125,7 +129,7 @@ function App() {
 
 
         {/* Education */}
-        <section id="edu" className="flex justify-center items-center min-h-[1700px] sm:min-h-[1400px] md:min-h-[1600px] lg:min-h-[1100px] p-4">
+        <section id="edu" className="flex justify-center items-center min-h-[1100px] sm:min-h-[1400px] md:min-h-[1600px] lg:min-h-[1100px] p-4">
           <Timeline />
         </section>
 
