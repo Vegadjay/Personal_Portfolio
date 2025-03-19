@@ -4,6 +4,7 @@ import GithubSvg from '/icons3/Github.svg';
 import InstagramSvg from '/icons3/Instagram.svg';
 import LinkdinSvg from '/icons3/Linkdin.svg';
 import YoutubeSvg from '/icons3/Youtube.svg';
+import XSvg from '/icons3/X.svg';
 import Texthovereffect from '../components/Hoverrevel';
 import Maintext from '../components/Glow';
 import Typewriter from '../components/Typewriter';
@@ -36,6 +37,7 @@ export const Page1 = () => {
     }, []);
 
     const socialLinks = [
+        { href: "https://x.com/JAY_VEGAD_", icon: XSvg, alt: "YouTube", hoverColor: "hover:bg-slate-400" },
         { href: "https://github.com/vegadjay", icon: GithubSvg, alt: "GitHub", hoverColor: "hover:bg-purple-500" },
         { href: "https://www.linkedin.com/in/vegadjay/", icon: LinkdinSvg, alt: "LinkedIn", hoverColor: "hover:bg-blue-600" },
         { href: "https://www.youtube.com/@JAY_VEGAD", icon: YoutubeSvg, alt: "YouTube", hoverColor: "hover:bg-red-600" },
@@ -129,7 +131,7 @@ export const Page1 = () => {
                                     href={link.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={`w-14 h-14 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-all duration-300 ${link.hoverColor} hover:shadow-xl`}
+                                    className={`w-14 h-14 rounded-full bg-gray-800 shadow-lg flex items-center justify-center transition-all duration-300 ${link.hoverColor} ${link.iconImageColor} hover:shadow-xl`}
                                     whileHover={{ scale: 1.15, rotate: 5 }}
                                     whileTap={{ scale: 0.95 }}
                                     initial={{ opacity: 0, y: 20 }}
@@ -139,7 +141,7 @@ export const Page1 = () => {
                                     <img
                                         src={link.icon}
                                         alt={link.alt}
-                                        className="w-8 h-8 transition-transform"
+                                        className={`w-8 h-8 transition-transform ${link.iconImageColor}`}
                                     />
                                 </motion.a>
                             ))}
