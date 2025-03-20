@@ -171,10 +171,10 @@ const GitHubStreakTable = () => {
         if (isPadding) return 'bg-transparent';
         const colors = [
             'bg-gray-800',
-            'bg-green-900',
-            'bg-green-700',
-            'bg-green-500',
-            'bg-green-300',
+            'bg-teal-900',
+            'bg-teal-700',
+            'bg-teal-500',
+            'bg-teal-300',
         ];
         return colors[level];
     };
@@ -191,7 +191,7 @@ const GitHubStreakTable = () => {
     if (loading) {
         return (
             <div className="flex justify-center items-center h-40">
-                <div className="animate-spin rounded-full h-12 w-12 border-green-500"></div>
+                <div className="animate-spin h-12 w-12 border-green-500"></div>
             </div>
         );
     }
@@ -209,21 +209,21 @@ const GitHubStreakTable = () => {
             <div className="min-w-max">
                 <div className="relative mt-6">
                     <div className="flex">
-                        <div className="flex flex-col justify-around pr-2 h-28">
+                        <div className="flex flex-col justify-around pr-2 h-32 -mt-5 gap-3">
                             {contributionData.weekdays.map((day, index) => (
-                                <div key={`day-${index}`} className="text-xs text-gray-400 h-3">
+                                <div key={`day-${index}`} className="text-md flex flex-col gap-6 text-gray-400 h-10">
                                     {day}
                                 </div>
                             ))}
                         </div>
 
-                        <div className="flex flex-1 gap-1 overflow-x-auto pb-2">
+                        <div className="flex flex-1 gap-1 overflow-x-auto">
                             {getWeeks().map((week, weekIndex) => (
-                                <div key={`week-${weekIndex}`} className="flex flex-col gap-1 flex-shrink-0">
+                                <div key={`week-${weekIndex}`} className="flex flex-col gap-1 flex-shrink-1">
                                     {week.map((day, dayIndex) => (
                                         <motion.div
                                             key={`day-${weekIndex}-${dayIndex}`}
-                                            className={`h-3 w-3 rounded-full ${getContributionColor(day.level, day.isPadding)}`}
+                                            className={`h-3 w-3 rounded-sm ${getContributionColor(day.level, day.isPadding)}`}
                                             initial={{ opacity: 0 }}
                                             animate={{ opacity: 1 }}
                                             transition={{
@@ -248,11 +248,11 @@ const GitHubStreakTable = () => {
                         </a>
                         <div className="flex items-center gap-1">
                             <span className="text-xs sm:text-sm text-gray-400">Less</span>
-                            <div className={`h-3 w-3 rounded-sm ${getContributionColor(0)}`}></div>
-                            <div className={`h-3 w-3 rounded-sm ${getContributionColor(1)}`}></div>
-                            <div className={`h-3 w-3 rounded-sm ${getContributionColor(2)}`}></div>
-                            <div className={`h-3 w-3 rounded-sm ${getContributionColor(3)}`}></div>
-                            <div className={`h-3 w-3 rounded-sm ${getContributionColor(4)}`}></div>
+                            <div className={`h-3 w-3 ${getContributionColor(0)}`}></div>
+                            <div className={`h-3 w-3 ${getContributionColor(1)}`}></div>
+                            <div className={`h-3 w-3 ${getContributionColor(2)}`}></div>
+                            <div className={`h-3 w-3 ${getContributionColor(3)}`}></div>
+                            <div className={`h-3 w-3 ${getContributionColor(4)}`}></div>
                             <span className="text-xs sm:text-sm text-gray-400">More</span>
                         </div>
                     </div>

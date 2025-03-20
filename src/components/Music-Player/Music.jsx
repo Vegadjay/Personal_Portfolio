@@ -3,7 +3,7 @@ import { Play, Pause } from "lucide-react";
 
 const MusicPlayer = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTrack ] = useState(0);
+  const [currentTrack] = useState(0);
   const audioRef = useRef(null);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const MusicPlayer = () => {
     <div className="fixed bottom-[1.5rem] md:bottom-[3.5rem] left-5 sm:left-5 h-12 w-12 border border-white/40 bg-opacity-80 rounded-3xl shadow-lg backdrop-blur-xl bg-black sm:bg-transparent md:sm:bg-transparent lg:sm:bg-transparent text-white flex items-center justify-center p-3 z-50
       md:left-5 md:right-auto
       lg:right-5 lg:left-auto lg:w-72 lg:h-16 lg:justify-start">
-      
+
       <audio
         ref={audioRef}
         src={playlist[currentTrack].src}
@@ -47,9 +47,8 @@ const MusicPlayer = () => {
         <img
           src="/Song/song-cd.svg"
           alt="Music CD"
-          className={`w-12 h-12 ${
-            isPlaying ? "animate-spin" : ""
-          }`}
+          className={`w-12 h-12 ${isPlaying ? "animate-spin" : ""
+            }`}
           style={{ animationDuration: "3s", animationTimingFunction: "linear" }}
         />
 

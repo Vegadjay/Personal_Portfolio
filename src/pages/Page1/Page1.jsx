@@ -9,7 +9,7 @@ import Texthovereffect from '../components/Hoverrevel';
 import Maintext from '../components/Glow';
 import Typewriter from '../components/Typewriter';
 import GitHubStreakTable from '../../components/Streak-component/Streak-Component';
-import './styles.css';
+import '../../components/styles.css';
 
 export const Page1 = () => {
     const [windowSize, setWindowSize] = useState({ width: window.innerWidth, height: window.innerHeight });
@@ -70,8 +70,9 @@ export const Page1 = () => {
                             </a>
                         </div>
 
-                        <div className="p-4 space-y-20">
-                            <h3 className="text-xl font-semibold text-indigo-300">My GitHub Activity</h3>
+                        <div className="p-4 space-y-6">
+                            <h3 className="text-2xl font-semibold text-indigo-300">Github Stats.</h3>
+                            <p className='text-md'>Show my work to <a href="https://github.com/Vegadjay" target='_blank'>here</a>.</p>
                             <GitHubStreakTable />
                         </div>
                     </div>
