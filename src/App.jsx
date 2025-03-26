@@ -11,6 +11,7 @@ import Loader from './components/Loader/Loader';
 import Navbar from './components/Navbar/Navbar';
 import { TextAnimation } from './components/TextFolder/TextAnimation';
 import MusicPlayer from './components/Music-Player/Music';
+import OnekoCat from './components/OnekoCat';
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
@@ -88,7 +89,7 @@ function App() {
         backgroundSize: '21px 21px, 21px 21px, 100% 100%',
       }}
     >
-      
+
       <div className="fixed bottom-0 left-0 right-0 z-50 w-full flex justify-center pb-4 px-4">
         <MusicPlayer />
         <Navbar />
@@ -114,40 +115,32 @@ function App() {
         </div>
       )}
 
+      {!isMobile && <OnekoCat />}
+
       <div className="flex flex-col space-y-4 md:space-y-8 relative z-10">
-        {/* Homepage */}
         <section id="homepage" className="flex justify-center items-center min-h-screen p-4">
           <Page1 />
         </section>
 
-
-        {/* About Me */}
         <section id="aboutme" className="mb-96 flex justify-center items-center 
         sm:min-h-[1000px] lg:min-h-[800px] min-h-[1200px] p-4">
           <Page2 />
         </section>
 
-
-        {/* Education */}
         <section id="edu" className="flex justify-center items-center min-h-[1100px] sm:min-h-[1400px] md:min-h-[1600px] lg:min-h-[1100px] p-4">
+
           <Timeline />
         </section>
-
-
-        {/* Skills */}
         <section id="skills" className="flex justify-center items-center min-h-[800px] sm:min-h-[1000px] md:min-h-[700px] lg:min-h-[600px] p-4">
           <Page4 />
         </section>
 
-
-        {/* Page5 - Only visible on larger screens */}
         <section className="hidden lg:flex justify-center items-center min-h-[1100px] p-4">
           <Page5 />
         </section>
 
         <div className="h-[10rem]"></div>
 
-        {/* Projects */}
         <section id="projects" className="flex justify-center items-center min-h-[2000px] md:min-h-[1800px] lg:min-h-[1500px] p-4">
           <Page6 />
         </section>
@@ -156,7 +149,6 @@ function App() {
           <TextAnimation />
         </div>
 
-        {/* Contact */}
         <section id="contact" className="flex justify-center items-center min-h-[1000px] md:min-h-[1200px] lg:min-h-[1000px] p-4">
           <Page7 />
         </section>
